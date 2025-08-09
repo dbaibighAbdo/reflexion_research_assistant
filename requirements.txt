@@ -1,0 +1,8 @@
+langgraph
+langchain
+langchain-core
+langchain-community
+langchain-openai
+langgraph-cli[inmem]
+dotenv
+pydantic
