@@ -1,4 +1,7 @@
 from pydantic import BaseModel, Field
+from typing_extensions import TypedDict
+from typing import Annotated
+import operator
 
 class ReflectionSchema(BaseModel):
     """
@@ -26,3 +29,9 @@ class RevisionSchema(AnswerQuestionSchema):
     )
 
     
+class OverAllState(TypedDict):
+    topic: str
+    context: Annotated[list, operator.add]   
+    answer: str
+    search_queries: list[str] 
+    reflection: ReflectionSchema 
